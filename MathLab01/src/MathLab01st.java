@@ -80,7 +80,7 @@ public class MathLab01st
 		System.out.println("Cube Surface Area:                " + Geometry.cubeSurfaceArea(side));
 		System.out.println("Square Prism Surface Area:        " + Geometry.squarePrismSurfaceArea(side,height));
 		System.out.println("Rectangular Prism Surface Area:   " + Geometry.rectangularPrismSurfaceArea(length,width,height));
-//		System.out.println("Sphere Surface Area:              " + Geometry.sphereSurfaceArea(radius));
+		System.out.println("Sphere Surface Area:              " + Geometry.sphereSurfaceArea(radius));
 		System.out.println("\n");
 	}
 	
@@ -89,12 +89,12 @@ public class MathLab01st
 		System.out.println("Volumes of 3D Shapes");
 		System.out.println("=====================================================");
 		System.out.println("Cube Volume:                      " + Geometry.cubeVolume(side));
-//		System.out.println("Square Prism Volume:              " + Geometry.squarePrismVolume(side,height));
-//		System.out.println("Rectangular Prism Volume:         " + Geometry.rectangularPrismVolume(length,width,height));
-//		System.out.println("Pyramid Volume:                   " + Geometry.pyramidVolume(side,height));
-//		System.out.println("Cylinder Volume:                  " + Geometry.cylinderVolume(radius,height));
-//		System.out.println("Cone Volume:                      " + Geometry.coneVolume(radius,height));
-//		System.out.println("Sphere Volume:                    " + Geometry.sphereVolume(radius));
+		System.out.println("Square Prism Volume:              " + Geometry.squarePrismVolume(side,height));
+		System.out.println("Rectangular Prism Volume:         " + Geometry.rectangularPrismVolume(length,width,height));
+		System.out.println("Pyramid Volume:                   " + Geometry.pyramidVolume(side,height));
+		System.out.println("Cylinder Volume:                  " + Geometry.cylinderVolume(radius,height));
+		System.out.println("Cone Volume:                      " + Geometry.coneVolume(radius,height));
+		System.out.println("Sphere Volume:                    " + Geometry.sphereVolume(radius));
 		System.out.println("\n");		
 	}
 }
@@ -108,10 +108,7 @@ class Geometry
 	    return 4 * s; 
 	}
 	
-	public static String circumference(double radius) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	public static double pentagonPerimeter(double side) {
 		// TODO Auto-generated method stub
@@ -124,17 +121,15 @@ class Geometry
 		return 6 * side;
 	}
 
-	public static Object String (double side) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
 
 	public static double rectanglePerimeter (double l, double w)
 	{
 		return l * 2 + w * 2;
 	}	
 	
-	public static double circlePerimeter (double radius)
+	public static double circumference (double radius)
 	
 	{
 		return 2 * Math.PI * radius;
@@ -190,7 +185,7 @@ class Geometry
 	}
 	
 	public static double sphereSurfaceArea (double r){
-		return r;
+		return Math.pow(r, 2) * 4 * Math.PI;
 		
 	}
 	
@@ -198,17 +193,51 @@ class Geometry
 	
 	
 	// 3D Volumes
-	public static double cubeVolume (double s)             
-	{ 
+	public static double cubeVolume (double s) { 
 	    return s * s * s; 
 	}
+	
+	public static double squarePrismVolume (double s, double h){
+		return Math.pow(s, 2) * h;
+}
+	
+	public static double rectangularPrismVolume (double length, double height, double width){
+	
+		return length * width * height;
+	}
+
+
+	public static double pyramidVolume (double s, double h ){
+		return Math.pow(s, 2) * h /3;
+	}
+
+	public static double cylinderVolume (double r, double h){
+		return Math.PI * Math.pow(r, 2) * h;
+	}
+
+	public static double coneVolume (double r, double h){
+		return Math.PI * Math.pow(r, 2) * h / 3;
+	}
+
+	public static double sphereVolume (double r){
+		return Math.PI * 4 * Math.pow(r, 3) / 3;
+	}
+	
+
+
+
+
+
+}
+	
+	
 	
 	
 	
 	
 
 	
-}
+
 
 	
 	
